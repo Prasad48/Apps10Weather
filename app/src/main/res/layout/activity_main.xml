@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+    android:background="#DCDCDC"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/progress_bar"
+            android:visibility="visible"
+            tools:ignore="MissingConstraints" />
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/no_network2"
+            android:visibility="invisible"
+            android:background="@color/nonetworkbg"
+            android:orientation="horizontal">
+
+
+        <TextView
+                android:id="@+id/offlinetext"
+                android:layout_centerInParent="true"
+                android:lines="3"
+                android:padding="35sp"
+                android:textSize="54sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/offlinetext" />
+
+        <Button
+                android:id="@+id/retry2"
+                android:layout_marginTop="44dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/offlinetext"
+                android:layout_centerHorizontal="true"
+                android:background="@color/retrybg"
+                android:textColor="@color/white"
+                android:text="retry" />
+
+    </RelativeLayout>
+    <LinearLayout
+
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefresh"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TableRow
+                        android:padding="5dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent">
+                    <TextView
+                            android:id="@+id/tv_current_temperature"
+                            android:textSize="48sp"
+                        android:fontFamily="Roboto-Thin"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+                    <TextView
+                            android:id="@+id/degreec"
+                            android:layout_marginStart="15dp"
+                            android:textSize="48sp"
+                            android:fontFamily="Roboto-thin"
+                            android:textColor="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                        android:layout_marginLeft="15dp" />
+
+                </TableRow>
+                <TextView
+                        android:padding="5dp"
+                        android:id="@+id/tv_current_location"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_marginBottom="50sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="Roboto-Thin"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"/>
+
+                <LinearLayout
+                        android:id="@+id/lay_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                </LinearLayout>
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:id="@+id/lay_nextdays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:background="#FFFFFF"
+          android:visibility="gone"
+
+            android:layout_marginTop="2dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/rvNextDays"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_next_forecast"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

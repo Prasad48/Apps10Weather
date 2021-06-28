@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Apps10Weather</string>
+    <string name="degree_celsius_symbol">°C</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="dialogTitle">No Data Found</string>
+    <string name="dialogMessage">Some thing wnet Wrong Please Retry Again</string>
+    <string name="offlinetext">Something went wrong at our end</string>
+</resources>
